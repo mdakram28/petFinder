@@ -27,4 +27,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="126dp"
         app:srcCompat="@drawable/logosquare" />
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/welcome_message"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
