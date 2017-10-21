@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "954234796064",
+    "firebase_url": "https://tinderpets-714d6.firebaseio.com",
+    "project_id": "tinderpets-714d6",
+    "storage_bucket": "tinderpets-714d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954234796064:android:2a9862440f0790b5",
+        "android_client_info": {
+          "package_name": "com.dhirajkumarcoder.android.tinderpets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954234796064-m3kk214176l2kn7daqbetolojf3mfjbc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhirajkumarcoder.android.tinderpets",
+            "certificate_hash": "3ee9c7a77f3663335b24ea9954c1d0ab22b62bda"
+          }
+        },
+        {
+          "client_id": "954234796064-vifuj2o498ov4b1fd0tukc9v7tmfd9fq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlx6OPFPdJ4n7zF_xTLuYdnsNbk1cOVAg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954234796064-vifuj2o498ov4b1fd0tukc9v7tmfd9fq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
