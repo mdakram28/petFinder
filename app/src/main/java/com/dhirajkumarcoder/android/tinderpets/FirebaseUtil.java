@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.util.Base64;
 import android.util.Log;
 
+import com.dhirajkumarcoder.android.tinderpets.interfaces.PetsReceived;
 import com.dhirajkumarcoder.android.tinderpets.interfaces.UserReceived;
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
@@ -15,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 
 /**
  * Created by srbhj on 21-10-2017.
@@ -23,6 +25,7 @@ import java.io.ByteArrayOutputStream;
 public class FirebaseUtil {
     static FirebaseDatabase database;
     static DatabaseReference myRef;
+//    public HashMap<String, Pet> allPets = new HashMap<>();
 
 //    static HashMap<String, User> users = new HashMap<String, User>();
 
@@ -30,7 +33,30 @@ public class FirebaseUtil {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
         Log.d("firebase","Attaching listender");
+
     }
+
+    public static void getAllPets(final PetsReceived callback){
+        myRef.child("pets").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Pet> allPets = new ArrayList<Pet>();
+                for(DataSnapshot child : dataSnapshot.getChildren()){
+                    allPets.add(child.getValue(Pet.class));
+                }
+
+                Log.d("firebase",allPets.toString());
+                callback.petsReceived(allPets);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
 
     public static String getNewId(){
         return Integer.toString((int)(Math.random()*10000));
@@ -46,7 +72,7 @@ public class FirebaseUtil {
     }
 
     public static void getUserById(String id, final UserReceived callback){
-        myRef.child("users").child(id).addValueEventListener(new ValueEventListener() {
+        myRef.child("users").child(id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 callback.userReceived(dataSnapshot.getValue(User.class));
@@ -72,5 +98,6 @@ public class FirebaseUtil {
         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
         return decodedByte;
     }
+
 
 }

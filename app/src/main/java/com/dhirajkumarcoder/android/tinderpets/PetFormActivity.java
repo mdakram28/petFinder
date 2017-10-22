@@ -20,6 +20,7 @@ import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -113,7 +114,8 @@ public class PetFormActivity extends AppCompatActivity implements View.OnClickLi
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 String[] images = {FirebaseUtil.encodeBitmap(bitmap)};
-                pet.photos = new ArrayList<>(Arrays.asList(images));
+                pet.photos.clear();
+                pet.photos.put(FirebaseUtil.getNewId(), images[0]);
             } catch (IOException e) {
                 e.printStackTrace();
             }
