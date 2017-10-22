@@ -3,15 +3,13 @@ package com.dhirajkumarcoder.android.tinderpets;
 import android.util.Log;
 
 import com.dhirajkumarcoder.android.tinderpets.interfaces.UserReceived;
-import com.dhirajkumarcoder.android.tinderpets.models.Pet;
-import com.dhirajkumarcoder.android.tinderpets.models.User;
+import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
+import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
 
 /**
  * Created by srbhj on 21-10-2017.

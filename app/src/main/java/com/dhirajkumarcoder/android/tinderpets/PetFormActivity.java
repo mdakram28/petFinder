@@ -1,17 +1,14 @@
 package com.dhirajkumarcoder.android.tinderpets;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.NumberPicker;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-import com.dhirajkumarcoder.android.tinderpets.models.Pet;
+import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
 
 public class PetFormActivity extends AppCompatActivity implements View.OnClickListener {
 
