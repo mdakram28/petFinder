@@ -68,14 +68,15 @@
     android:orientation="horizontal">
 
 
-    <TextView
+    <Spinner
         android:id="@+id/etneutered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Neutered" />
+        android:entries="@array/YesNo"
+        android:drawSelectorOnTop="true"/>
 
-    <CheckBox
+    <!--<CheckBox
         android:id="@+id/checkBoxyes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="No" />
+        android:text="No" />-->
 
 </LinearLayout>
 

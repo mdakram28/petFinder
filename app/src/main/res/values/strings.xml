@@ -16,4 +16,9 @@
         <item>Dog4</item>
 
     </string-array>
+
+    <string-array name="YesNo">
+        <item>YES</item>
+        <item>NO</item>
+    </string-array>
 </resources>

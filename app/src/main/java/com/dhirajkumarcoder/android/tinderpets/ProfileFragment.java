@@ -1,9 +1,11 @@
 package com.dhirajkumarcoder.android.tinderpets;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -12,7 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class ProfileFragment extends android.app.Fragment {
+public class ProfileFragment extends android.app.Fragment implements View.OnClickListener {
 
     @BindView(R.id.userName)
     TextView name;
@@ -23,16 +25,27 @@ public class ProfileFragment extends android.app.Fragment {
     @BindView(R.id.userContact)
     TextView contact;
 
+    @BindView(R.id.btnAddPet)
+    Button btnAddPet;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this.getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view =  inflater.inflate(R.layout.fragment_profile, container, false);
+        ButterKnife.bind(this,view);
+        btnAddPet.setOnClickListener(this);
+        return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent i = new Intent(this.getContext(), PetFormActivity.class);
+        startActivity(i);
     }
 }
