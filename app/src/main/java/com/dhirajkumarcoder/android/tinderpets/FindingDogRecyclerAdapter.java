@@ -65,16 +65,9 @@ public class FindingDogRecyclerAdapter extends RecyclerView.Adapter<FindingDogRe
 
         public RecyclerViewHolder(View view) {
             super(view);
-<<<<<<< HEAD
-            imageView = (ImageView) view.findViewById(R.id.petimage);
-            details=(TextView)view.findViewById(R.id.subTitle);
-
-
-=======
             ButterKnife.bind(view);
             imageView = (ImageView) view.findViewById(R.id.petimage);
             details = (TextView) view.findViewById(R.id.subTitle);
->>>>>>> 3e5acf1756d3d1bb8c3a34bed5256ada22267b7c
         }
     }
 }
