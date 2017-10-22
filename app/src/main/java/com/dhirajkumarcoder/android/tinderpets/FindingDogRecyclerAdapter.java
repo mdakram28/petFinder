@@ -1,23 +1,31 @@
 package com.dhirajkumarcoder.android.tinderpets;
 
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
+
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by DHIRAJ KUMAR JAIN on 22-10-2017.
  */
 
 public class FindingDogRecyclerAdapter extends RecyclerView.Adapter<FindingDogRecyclerAdapter.RecyclerViewHolder> {
-    private ArrayList<FIndDogDataProvider> arrayList1=new ArrayList<>();
-    public FindingDogRecyclerAdapter(ArrayList<FIndDogDataProvider> arrayList2)
+    private ArrayList<Pet> pets =new ArrayList<>();
+    public FindingDogRecyclerAdapter(ArrayList<Pet> arrayList2)
     {
-        this.arrayList1=arrayList2;
+        this.pets =arrayList2;
     }
 
     @Override
@@ -31,29 +39,42 @@ public class FindingDogRecyclerAdapter extends RecyclerView.Adapter<FindingDogRe
 
     @Override
     public void onBindViewHolder(FindingDogRecyclerAdapter.RecyclerViewHolder holder1, int position) {
-        FIndDogDataProvider dataprovider=arrayList1.get(position);
-        holder1.imageView.setImageResource(dataprovider.getimg());
-        holder1.details.setText(dataprovider.getdetails());
+        Pet pet = pets.get(position);
+        Bitmap img = FirebaseUtil.decodeBase64(pet.photos.entrySet().iterator().next().getValue());
+        Log.d("firebase",img.getByteCount()+"");
 
-
-
-
+        holder1.imageView.setImageBitmap(img);
+        holder1.details.setText(Html.fromHtml(
+                        "<b>Name : </b>" + pet.name +
+                        "<br/><b>Age</b> : " + pet.age +
+                        "<br/><b>Breed</b> : " +pet.breed+
+                        "<br/><b>Color</b> : " +pet.color+
+                        "<br/><b>Gender</b> : " +pet.gender+
+                        "<br/><b>Neutered</b> : " +pet.neutered+
+                        "<br/><b>Size</b> : " +pet.size,Html.FROM_HTML_MODE_COMPACT));
     }
 
     @Override
     public int getItemCount() {
-        return arrayList1.size();
+        return pets.size();
     }
+
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView details;
+        @BindView(R.id.petimage) ImageView imageView;
+        @BindView(R.id.subTitle) TextView details;
 
         public RecyclerViewHolder(View view) {
             super(view);
+<<<<<<< HEAD
             imageView = (ImageView) view.findViewById(R.id.petimage);
             details=(TextView)view.findViewById(R.id.subTitle);
 
 
+=======
+            ButterKnife.bind(view);
+            imageView = (ImageView) view.findViewById(R.id.petimage);
+            details = (TextView) view.findViewById(R.id.subTitle);
+>>>>>>> 3e5acf1756d3d1bb8c3a34bed5256ada22267b7c
         }
     }
 }

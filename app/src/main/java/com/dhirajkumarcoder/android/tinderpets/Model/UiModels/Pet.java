@@ -36,7 +36,7 @@ public class Pet {
     public String breed;
     public String size;
     public boolean neutered;
-    public List<String> photos;
+    public HashMap<String,String> photos;
     public String info;
     public Map<String,String> healthDetails;
     public Map<String,String> preferences;
@@ -44,8 +44,27 @@ public class Pet {
 
     public Pet(){
         id = FirebaseUtil.getNewId();
-        photos = new ArrayList<>();
+        photos = new HashMap<>();
         healthDetails = new HashMap<>();
         preferences = new HashMap<>();
+    }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", ownerid='" + ownerid + '\'' +
+                ", gender='" + gender + '\'' +
+                ", breed='" + breed + '\'' +
+                ", size='" + size + '\'' +
+                ", neutered=" + neutered +
+                ", photos=" + photos +
+                ", info='" + info + '\'' +
+                ", healthDetails=" + healthDetails +
+                ", preferences=" + preferences +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
