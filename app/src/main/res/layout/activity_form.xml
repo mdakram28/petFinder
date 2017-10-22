@@ -72,9 +72,8 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Password"
-                            android:inputType="textPassword"
-                            android:id="@+id/etPassword"
+                            android:hint="Address"
+                            android:id="@+id/etAddress"
                             android:textSize="16sp"
                             />
 
@@ -87,7 +86,8 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Raised by"
+                            android:hint="Contact No"
+                            android:inputType="number"
                             android:id="@+id/etRaisedBy"
                             android:textSize="16sp"
                             />
@@ -101,8 +101,9 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Country Preference 1"
-                            android:id="@+id/etCountryPref1"
+                            android:hint="DOB"
+                            android:inputType="date"
+                            android:id="@+id/etDOB"
                             android:textSize="16sp"
                             />
 
@@ -115,8 +116,8 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Country Preference 2"
-                            android:id="@+id/etCountryPref2"
+                            android:hint="House No/Street"
+                            android:id="@+id/etHouse"
                             android:textSize="16sp"
                             />
 
@@ -129,8 +130,8 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Country Preference 3"
-                            android:id="@+id/etCountryPref3"
+                            android:hint="City"
+                            android:id="@+id/etCity"
                             android:textSize="16sp"
                             />
 
@@ -144,8 +145,38 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Contact number"
-                            android:id="@+id/etContactNo"
+                            android:hint="State"
+                            android:id="@+id/etState"
+                            android:textSize="16sp"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Zip Code"
+                            android:inputType="number"
+                            android:id="@+id/etZip"
+                            android:textSize="16sp"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Country"
+                            android:id="@+id/etCountry"
                             android:textSize="16sp"
                             />
 
