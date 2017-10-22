@@ -2,11 +2,14 @@ package com.dhirajkumarcoder.android.tinderpets;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+
 public class StartupActivity extends AppCompatActivity {
 
    // private TextView mTextMessage;
@@ -59,4 +62,8 @@ public class StartupActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    public void PetForm(View view) {
+        Intent i=new Intent(this,PetFormActivity.class);
+        startActivity(i);
+    }
 }

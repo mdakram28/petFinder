@@ -120,5 +120,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         FirebaseUtil.addUser(user);
         startup(view);
     }
+
+
 }
 
