@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.dhirajkumarcoder.android.tinderpets.interfaces.UserReceived;
-import com.dhirajkumarcoder.android.tinderpets.models.User;
+import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;

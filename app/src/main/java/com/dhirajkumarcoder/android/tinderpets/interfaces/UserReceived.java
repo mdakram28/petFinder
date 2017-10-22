@@ -1,6 +1,6 @@
 package com.dhirajkumarcoder.android.tinderpets.interfaces;
 
-import com.dhirajkumarcoder.android.tinderpets.models.User;
+import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
 
 /**
  * Created by srbhj on 21-10-2017.

@@ -1,6 +1,4 @@
-package com.dhirajkumarcoder.android.tinderpets.models;
-
-import com.dhirajkumarcoder.android.tinderpets.FirebaseUtil;
+package com.dhirajkumarcoder.android.tinderpets.Model.UiModels;
 
 /**
  * Created by srbhj on 21-10-2017.

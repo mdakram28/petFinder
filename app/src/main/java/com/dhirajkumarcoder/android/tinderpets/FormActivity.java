@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.dhirajkumarcoder.android.tinderpets.models.User;
+import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.Profile;

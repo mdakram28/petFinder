@@ -1,5 +1,4 @@
 package com.dhirajkumarcoder.android.tinderpets;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.dhirajkumarcoder.android.tinderpets.models.Pet;
+import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
 
 import java.util.ArrayList;
 import java.util.List;
