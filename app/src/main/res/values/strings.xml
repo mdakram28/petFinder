@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TinderPets</string>
+    <string name="app_name">Buddy Finder</string>
     <string name="facebook_app_id">1987695461506718</string>
     <string name="title_activity_startup">StartupActivity</string>
     <string name="title_home">Home</string>

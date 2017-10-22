@@ -29,6 +29,7 @@
 
             <!-- <data android:scheme="@string/fb_login_protocol_scheme" /> -->
         </intent-filter>
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -51,6 +52,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FormActivity"></activity>
     </application>
 
 </manifest>
