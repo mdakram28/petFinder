@@ -1,10 +1,8 @@
-package com.dhirajkumarcoder.android.tinderpets.interfaces;
+package com.dhirajkumarcoder.android.tinderpets.Interfaces;
 
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
-import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by srbhj on 21-10-2017.

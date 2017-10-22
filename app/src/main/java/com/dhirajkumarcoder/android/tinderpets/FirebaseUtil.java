@@ -5,10 +5,9 @@ import android.graphics.BitmapFactory;
 import android.util.Base64;
 import android.util.Log;
 
-import com.dhirajkumarcoder.android.tinderpets.interfaces.PetsReceived;
-import com.dhirajkumarcoder.android.tinderpets.interfaces.UserReceived;
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
+import com.dhirajkumarcoder.android.tinderpets.Interfaces.*;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,6 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by srbhj on 21-10-2017.
@@ -85,18 +85,18 @@ public class FirebaseUtil {
         });
     }
 
-    public static String encodeBitmap(Bitmap bitmap){
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-        byte[] byteArray = byteArrayOutputStream .toByteArray();
-        String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
-        return encoded;
+    public static String encodeBitmap(Bitmap image){
+        ByteArrayOutputStream byteArrayOS = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOS);
+        return Base64.encodeToString(byteArrayOS.toByteArray(), Base64.DEFAULT);
     }
 
-    public static Bitmap decodeBase64(String encoded){
-        byte[] decodedString = Base64.decode(encoded, Base64.DEFAULT);
-        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-        return decodedByte;
+    public static Bitmap decodeBase64(String input){
+        byte[] decodedBytes = Base64.decode(input, Base64.DEFAULT);
+        Log.d("firebase", Arrays.toString(decodedBytes));
+        Bitmap ret = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+        Log.d("firebase", ret.toString());
+        return ret;
     }
 
 

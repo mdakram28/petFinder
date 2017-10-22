@@ -8,10 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
-import com.dhirajkumarcoder.android.tinderpets.interfaces.PetsReceived;
+import com.dhirajkumarcoder.android.tinderpets.Interfaces.PetsReceived;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FindDogFragment extends android.app.Fragment {
     RecyclerView recyclerView1;
