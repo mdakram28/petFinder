@@ -5,7 +5,7 @@ import android.graphics.BitmapFactory;
 import android.util.Base64;
 import android.util.Log;
 
-import com.dhirajkumarcoder.android.tinderpets.interfaces.UserReceived;
+import com.dhirajkumarcoder.android.tinderpets.Interfaces.UserReceived;
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
 import com.google.firebase.database.DataSnapshot;

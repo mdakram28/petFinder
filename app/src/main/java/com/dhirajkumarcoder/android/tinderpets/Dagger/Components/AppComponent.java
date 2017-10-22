@@ -3,6 +3,7 @@ package com.dhirajkumarcoder.android.tinderpets.Dagger.Components;
 import com.dhirajkumarcoder.android.tinderpets.Dagger.Modules.ApiModule;
 import com.dhirajkumarcoder.android.tinderpets.Dagger.Modules.JobModule;
 import com.dhirajkumarcoder.android.tinderpets.Dagger.Modules.SharedPrefModule;
+import com.dhirajkumarcoder.android.tinderpets.LoginActivity;
 import com.dhirajkumarcoder.android.tinderpets.Model.Jobs.BaseJob;
 
 import javax.inject.Singleton;
@@ -18,4 +19,5 @@ import dagger.Component;
 public interface AppComponent {
 
     void inject(BaseJob job) ;
+    void inject(LoginActivity loginActivity) ;
 }
