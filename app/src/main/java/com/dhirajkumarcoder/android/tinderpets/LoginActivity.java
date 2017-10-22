@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginButton loginButton;
     private CallbackManager callbackManager;
+    public static LoginResult loginResult;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +31,11 @@ public class LoginActivity extends AppCompatActivity {
             callbackManager = CallbackManager.Factory.create();
 
             loginButton = (LoginButton) findViewById(R.id.button_facebook_login1);
+            loginButton.setReadPermissions("email");
             loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override
-                public void onSuccess(LoginResult loginResult) {
+                public void onSuccess(LoginResult lr) {
+                    loginResult = lr;
                     goMainScreen();
                 }
 

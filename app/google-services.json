@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "954234796064-11cbjdcfe9vhq3epg4qpakc72tnvs0ii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhirajkumarcoder.android.tinderpets",
+            "certificate_hash": "8934bc1b006ffbb939b415512c9bc966a38ac3e5"
+          }
+        },
+        {
           "client_id": "954234796064-m3kk214176l2kn7daqbetolojf3mfjbc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
