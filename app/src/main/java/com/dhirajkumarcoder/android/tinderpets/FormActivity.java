@@ -52,7 +52,7 @@ public class FormActivity extends AppCompatActivity {
                             String firstName = response.getJSONObject().getString("first_name");
                             String lastName = response.getJSONObject().getString("last_name");
                             String gender = response.getJSONObject().getString("gender");
-                            name.setText(firstName, TextView.BufferType.EDITABLE);
+
 
 
 
@@ -70,6 +70,7 @@ public class FormActivity extends AppCompatActivity {
                             Log.i("Login"+ "FirstName", firstName);
                             Log.i("Login" + "LastName", lastName);
                             Log.i("Login" + "Gender", gender);
+                            name.setText(firstName, TextView.BufferType.EDITABLE);
 
 
                         } catch (JSONException e) {
