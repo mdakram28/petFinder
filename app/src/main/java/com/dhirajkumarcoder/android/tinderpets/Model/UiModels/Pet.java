@@ -2,6 +2,8 @@ package com.dhirajkumarcoder.android.tinderpets.Model.UiModels;
 
 import com.dhirajkumarcoder.android.tinderpets.FirebaseUtil;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,5 +44,8 @@ public class Pet {
 
     public Pet(){
         id = FirebaseUtil.getNewId();
+        photos = new ArrayList<>();
+        healthDetails = new HashMap<>();
+        preferences = new HashMap<>();
     }
 }

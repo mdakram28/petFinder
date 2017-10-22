@@ -1,7 +1,10 @@
 package com.dhirajkumarcoder.android.tinderpets;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,11 +12,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
@@ -43,6 +49,7 @@ public class PetFormActivity extends AppCompatActivity implements View.OnClickLi
     @BindView(R.id.etSubmit)
     Button submitButton;
 
+    Pet pet = new Pet();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +81,6 @@ public class PetFormActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        Pet pet = new Pet();
         pet.name = etName.getText().toString();
         pet.age = Integer.parseInt(etAge.getText().toString());
         pet.gender = etGender.getSelectedItem().toString();
@@ -94,6 +100,24 @@ public class PetFormActivity extends AppCompatActivity implements View.OnClickLi
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+
+            Uri uri = data.getData();
+
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                String[] images = {FirebaseUtil.encodeBitmap(bitmap)};
+                pet.photos = new ArrayList<>(Arrays.asList(images));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
