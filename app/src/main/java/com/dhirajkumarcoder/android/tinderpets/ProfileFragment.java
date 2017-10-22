@@ -40,6 +40,7 @@ public class ProfileFragment extends android.app.Fragment implements View.OnClic
         View view =  inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,view);
         btnAddPet.setOnClickListener(this);
+       // name.setText(User.);
         name.setText(User.user.name);
         email.setText(User.user.email);
         return view;
