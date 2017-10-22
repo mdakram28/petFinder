@@ -9,4 +9,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="detailarray">
+        <item>Dog1</item>
+        <item>Dog2</item>
+        <item>Dog3</item>
+        <item>Dog4</item>
+
+    </string-array>
 </resources>

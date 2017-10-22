@@ -21,14 +21,14 @@ public class StartupActivity extends AppCompatActivity {
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     PutDogFragment pf = new PutDogFragment();
-                    fragmentTransaction.add(R.id.content, pf, null);
+                    fragmentTransaction.replace(R.id.content, pf, null);
                     fragmentTransaction.commit();
                     return true;
                 case R.id.navigation_maps:
                     FragmentManager fragmentManager1 = getFragmentManager();
                     FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
                     FindDogFragment pf1 = new FindDogFragment();
-                    fragmentTransaction1.add(R.id.content, pf1, null);
+                    fragmentTransaction1.replace(R.id.content, pf1, null);
                     fragmentTransaction1.commit();
                   //  mTextMessage.setText(R.string.title_dashboard);
                     return true;
@@ -36,7 +36,7 @@ public class StartupActivity extends AppCompatActivity {
                     FragmentManager fragmentManager2 = getFragmentManager();
                     FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
                     ProfileFragment pf2 = new ProfileFragment();
-                    fragmentTransaction2.add(R.id.content, pf2, null);
+                    fragmentTransaction2.replace(R.id.content, pf2, null);
                     fragmentTransaction2.commit();
                     return true;
             }
