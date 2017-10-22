@@ -50,8 +50,8 @@ public class FindingDogRecyclerAdapter extends RecyclerView.Adapter<FindingDogRe
 
         public RecyclerViewHolder(View view) {
             super(view);
-            imageView = (ImageView) view.findViewById(R.id.imageViewfinddog);
-            details=(TextView)view.findViewById(R.id.TextViewfinddog);
+            imageView = (ImageView) view.findViewById(R.id.petimage);
+            details=(TextView)view.findViewById(R.id.subTitle);
 
 
         }

@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -40,7 +38,7 @@ public class ProfileFragment extends android.app.Fragment implements View.OnClic
         View view =  inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,view);
         btnAddPet.setOnClickListener(this);
-        name.setText(User.);
+       // name.setText(User.);
         return view;
     }
 
