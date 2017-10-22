@@ -7,6 +7,8 @@ import com.dhirajkumarcoder.android.tinderpets.FirebaseUtil;
  */
 
 public class User {
+
+    public static User user;
     /*
 Full Name:
 Email Address:
@@ -21,9 +23,11 @@ Checkbox
      */
     public String id;
     public String name;
+    public String email;
+    public String gender;
     public String address;
     public String phone;
-    public String dob;
+    public String birthday;
     public String city;
     public String state;
     public String zipCode;
@@ -33,6 +37,5 @@ Checkbox
     public boolean verified;
 
     public User(){
-        id = FirebaseUtil.getNewId();
     }
 }

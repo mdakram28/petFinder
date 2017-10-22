@@ -33,11 +33,12 @@ public class Pet {
     public String gender;
     public String breed;
     public String size;
-    public String neutered;
+    public boolean neutered;
     public List<String> photos;
     public String info;
     public Map<String,String> healthDetails;
     public Map<String,String> preferences;
+    public String color;
 
     public Pet(){
         id = FirebaseUtil.getNewId();
