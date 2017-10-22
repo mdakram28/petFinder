@@ -41,6 +41,7 @@ public class ProfileFragment extends android.app.Fragment implements View.OnClic
         ButterKnife.bind(this,view);
         btnAddPet.setOnClickListener(this);
         name.setText(User.user.name);
+        email.setText(User.user.email);
         return view;
     }
 

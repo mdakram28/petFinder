@@ -41,12 +41,14 @@ public class Pet {
     public Map<String,String> healthDetails;
     public Map<String,String> preferences;
     public String color;
+    public Map<String,String> requests;
 
     public Pet(){
         id = FirebaseUtil.getNewId();
         photos = new HashMap<>();
         healthDetails = new HashMap<>();
         preferences = new HashMap<>();
+        requests = new HashMap<>();
     }
 
     @Override
