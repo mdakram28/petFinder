@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#242038"
+    tools:context="com.dhirajkumarcoder.android.tinderpets.LoginActivity">
+
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/button_facebook_login1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:text="  connect_with_facebook"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="124dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_facebook_login1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="126dp"
+        app:srcCompat="@drawable/logosquare" />
+</RelativeLayout>
