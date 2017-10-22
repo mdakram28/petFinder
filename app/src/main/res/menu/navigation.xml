@@ -19,4 +19,11 @@
         android:icon="@drawable/user"
         android:title="Profile" />
 
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Notifications" />
+
+
+
 </menu>

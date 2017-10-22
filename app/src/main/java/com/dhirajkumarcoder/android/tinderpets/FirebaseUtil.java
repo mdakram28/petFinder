@@ -6,6 +6,7 @@ import android.util.Base64;
 import android.util.Log;
 
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Pet;
+import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.Request;
 import com.dhirajkumarcoder.android.tinderpets.Model.UiModels.User;
 import com.dhirajkumarcoder.android.tinderpets.Interfaces.*;
 import com.google.firebase.database.DataSnapshot;
@@ -17,6 +18,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created by srbhj on 21-10-2017.
@@ -27,13 +32,26 @@ public class FirebaseUtil {
     static DatabaseReference myRef;
 //    public HashMap<String, Pet> allPets = new HashMap<>();
 
-//    static HashMap<String, User> users = new HashMap<String, User>();
+    static HashMap<String, User> allUsers = new HashMap<String, User>();
 
     public FirebaseUtil(){
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
         Log.d("firebase","Attaching listender");
+        myRef.child("users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                allUsers.clear();
+                for(DataSnapshot child : dataSnapshot.getChildren()){
+                    allUsers.put(child.getKey(), child.getValue(User.class));
+                }
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public static void getAllPets(final PetsReceived callback){
@@ -45,7 +63,6 @@ public class FirebaseUtil {
                     allPets.add(child.getValue(Pet.class));
                 }
 
-                Log.d("firebase",allPets.toString());
                 callback.petsReceived(allPets);
             }
 
@@ -57,6 +74,26 @@ public class FirebaseUtil {
 
     }
 
+    public static void getAllUserPets(final String userid, final PetsReceived callback){
+        myRef.child("pets").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Pet> allPets = new ArrayList<Pet>();
+                for(DataSnapshot child : dataSnapshot.getChildren()){
+                    Pet pet = child.getValue(Pet.class);
+                    if(pet.ownerid == userid)
+                        allPets.add(pet);
+                }
+
+                callback.petsReceived(allPets);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     public static String getNewId(){
         return Integer.toString((int)(Math.random()*10000));
@@ -81,6 +118,28 @@ public class FirebaseUtil {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+    }
+
+    public void sendRequest(String petid,String userid){
+        myRef.child("pets").child(petid).child("requests").child(userid).setValue(new Date().getTime());
+    }
+
+    public void getAllUserRequests(String userid, final RequestsReceived callback){
+        getAllUserPets(userid, new PetsReceived() {
+            @Override
+            public void petsReceived(ArrayList<Pet> pets) {
+                ArrayList<Request> requests = new ArrayList<Request>();
+                for(Pet pet : pets){
+                    Iterator it = pet.requests.entrySet().iterator();
+                    while (it.hasNext()) {
+                        Map.Entry pair = (Map.Entry)it.next();
+                        requests.add(new Request(pet, allUsers.get(pair.getKey())));
+                        it.remove(); // avoids a ConcurrentModificationException
+                    }
+                }
+                callback.requestsReceived(requests);
             }
         });
     }
