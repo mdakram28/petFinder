@@ -8,6 +8,8 @@ import com.dhirajkumarcoder.android.tinderpets.Dagger.Modules.ApiModule;
 import com.dhirajkumarcoder.android.tinderpets.Dagger.Modules.JobModule;
 import com.dhirajkumarcoder.android.tinderpets.Dagger.Modules.SharedPrefModule;
 
+import io.realm.Realm;
+
 /**
  * Created by Abhinav on 22/10/17.
  */
@@ -19,6 +21,8 @@ public class AppController extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+
+        Realm.init(this);
 
         this.appComponent = DaggerAppComponent.builder()
                 .apiModule(new ApiModule())
