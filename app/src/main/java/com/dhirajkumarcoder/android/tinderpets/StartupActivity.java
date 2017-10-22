@@ -1,5 +1,7 @@
 package com.dhirajkumarcoder.android.tinderpets;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -18,13 +20,16 @@ public class StartupActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_dog:
-                    mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_maps:
                     mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    ProfileFragment profile = new ProfileFragment();
+                    //fragmentTransaction.replace(R.id.content, profile, null);
+                    fragmentTransaction.commit();
                     return true;
             }
             return false;
